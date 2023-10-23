@@ -1,0 +1,16 @@
+from tkinter import *
+def update():
+    print("Updating the GUI")
+    root.geometry(f"{width.get()}x{height.get()}")
+root=Tk()
+root.geometry("300x300")
+root.title("Window Resizer")
+width=StringVar()
+height=StringVar()
+Label(root,text="Window Resizer",font="Newtimesroman 15 bold").grid(row=1,column=2)
+Label(text="Width").grid(row=2,column=1)
+Label(text="Height").grid(row=3,column=1)
+Entry(root,textvariable=width).grid(row=2,column=2)
+Entry(root,textvariable=height).grid(row=3,column=2)
+Button(root,text="Apply",command=update).grid(row=8,column=2)
+root.mainloop()
